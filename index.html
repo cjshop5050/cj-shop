@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝑪𝑱亗𝑺𝑯𝑶𝑷 - شحن جواهر فري فاير</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .landing {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('photo834956080297346792.jpeg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .landing.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .start-btn {
+            background: linear-gradient(135deg, #FFD700 0%, #FF6B00 100%);
+            color: #1a1a1a;
+            border: 4px solid #fff;
+            padding: 20px 60px;
+            border-radius: 15px;
+            font-size: 2rem;
+            font-weight: 900;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            box-shadow: 0 10px 40px rgba(255, 107, 0, 0.6);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .start-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.8);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .main-content { display: none; }
+        .main-content.show { display: block; }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), 
+                        url('photo1711168073804380237.jpeg') center/cover;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #FFD700;
+            text-shadow: 3px 3px 0px #FF6B00, 6px 6px 20px rgba(0,0,0,0.8);
+        }
+        
+        .crown { font-size: 2rem; margin-bottom: -10px; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        
+        .package-card {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s ease;
+            border: 3px solid #FF6B00;
+        }
+        
+        .package-card:hover { transform: translateY(-10px); }
+        
+        .diamond-icon { font-size: 3rem; margin-bottom: 10px; }
+        .package-amount { font-size: 1.8rem; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; }
+        .package-price { font-size: 1.5rem; font-weight: 700; color: #8B0000; margin-bottom: 10px; }
+        
+        .package-note {
+            font-size: 0.95rem;
+            color: #1a1a1a;
+            font-weight: 700;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .buy-btn {
+            background: #1a1a1a;
+            color: #FFD700;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+            width: 100%;
+            text-decoration: none;
+            display: block;
+            margin-top: 15px;
+        }
+        
+        .buy-btn:hover { background: #000; transform: scale(1.05); }
+        
+        .memberships {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .membership-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border: 3px solid #FFD700;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .bag-icon { font-size: 4rem; margin-bottom: 15px; }
+        .membership-name { font-size: 1.6rem; font-weight: 900; color: #FFD700; margin-bottom: 10px; }
+        .membership-price { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+        
+        .membership-note {
+            font-size: 0.95rem;
+            color: #FFD700;
+            font-weight: 700;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #000;
+            color: #FFD700;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 768px) {
+            .logo { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .start-btn { font-size: 1.5rem; padding: 15px 40px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing" id="landing">
+        <button class="start-btn" onclick="startShop()">ابدأ 🚀</button>
+    </div>
+    
+    <div class="main-content" id="mainContent">
+        <div class="hero">
+            <div>
+                <div class="crown">👑</div>
+                <div class="logo">𝑪𝑱亗𝑺𝑯𝑶𝑷</div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2 class="section-title">شحن جواهر فري فاير</h2>
+            <div class="packages">
+                <div class="package-card">
+                    <div class="diamond-icon">💎</div>
+                    <div class="package-amount">100 جوهره ✅</div>
+                    <div class="package-price">11 د.ل 🔥</div>
+                    <div class="package-note">➕ الآيدي الخاص بك في واتسأب 🆔💬</div>
+                    <div class="package-note">يرجى إرسال سكرين للتحويل ➕</div>
+                    <a href="https://wa.me/+218928574522?text=نبي نشحن 100 جوهره - 11 د.ل" class="buy-btn" target="_blank">شراء الآن</a>
+                </div>
+                
+                <div class="package-card">
+                    <div class="diamond-icon">💎</div>
+                    <div class="package-amount">210 جوهره ✅</div>
+                    <div class="package-price">21 د.ل 🔥</div>
+                    <div class="package-note">➕ الآيدي الخاص بك في واتسأب 🆔💬</div>
+                    <div class="package-note">يرجى إرسال سكرين للتحويل ➕</div>
+                    <a href="https://wa.me/+218928574522?text=نبي نشحن 210 جوهره - 21 د.ل" class="buy-btn" target="_blank">شراء الآن</a>
+                </div>
+                
+                <div class="package-card">
+                    <div class="diamond-icon">💎</div>
+                    <div class="package-amount">300 جوهره ✅</div>
+                    <div class="package-price">32 د.ل 🔥</div>
+                    <div class="package-note">➕ الآيدي الخاص بك في واتسأب 🆔💬</div>
+                    <div class="package-note">يرجى إرسال سكرين للتحويل ➕</div>
+                    <a href="https://wa.me/+218928574522?text=نبي نشحن 300 جوهره - 32 د.ل" class="buy-btn" target="_blank">شراء الآن</a>
+                </div>
+                
+                <div class="package-card">
+                    <div class="diamond-icon">💎</div>
+                    <div class="package-amount">530 جوهره ✅</div>
+                    <div class="package-price">48 د.ل 🔥</div>
+                    <div class="package-note">➕ الآيدي الخاص بك في واتسأب 🆔💬</div>
+                    <div class="package-note">يرجى إرسال سكرين للتحويل ➕</div>
+                    <a href="https://wa.me/+218928574522?text=نبي نشحن 530 جوهره - 48 د.ل" class="buy-btn" target="_blank">شراء الآن</a>
+                </div>
+                
+                <div class="package-card">
+                    <div class="diamond-icon">💎</div>
+                    <div class="package-amount">1080 جوهره ✅</div>
+                    <div class="package-price">93 د.ل 🔥</div>
+                    <div class="package-note">➕ الآيدي الخاص بك في واتسأب 🆔💬</div>
+                    <div class="package-note">يرجى إرسال سكرين للتحويل ➕</div>
+                    <a href="https://wa.me/+218928574522?text=نبي نشحن 1080 جوهره - 93 د.ل" class="buy-btn" target="_blank">شراء الآن</a>
+                </div>
+                
+                <div class="package-card">
+                    <div class="diamond-icon">💎</div>
+                    <div class="package-amount">2200 جوهره ✅</div>
+                    <div class="package-price">178 د.ل 🔥</div>
+                    <div class="package-note">➕ الآيدي الخاص بك في واتسأب 🆔💬</div>
+                    <div class="package-note">يرجى إرسال سكرين للتحويل ➕</div>
+                    <a href="https://wa.me/+218928574522?text=نبي نشحن 2200 جوهره - 178 د.ل" class="buy-btn" target="_blank">شراء الآن</a>
+                </div>
+            </div>
+            
+            <h2 class="section-title">العضويات</h2>
+            <div class="memberships">
+                <div class="membership-card">
+                    <div class="bag-icon">🎒</div>
+                    <div class="membership-name">عضوية أسبوعية عبر الآيدي ✅</div>
+                    <div class="membership-price">30 د.ل 🔥</div>
+                    <div class="membership-note">➕ الآيدي الخاص بك في واتسأب 🆔💬</div>
+                    <div class="membership-note">يرجى إرسال سكرين للتحويل ➕</div>
+                    <a href="https://wa.me/+218928574522?text=نبي عضوية أسبوعية - 30 د.ل" class="buy-btn" target="_blank">شراء الآن</a>
+                </div>
+                
+                <div class="membership-card">
+                    <div class="bag-icon">🎒</div>
+                    <div class="membership-name">عضوية شهرية عبر الآيدي ✅</div>
+                    <div class="membership-price">125 د.ل 🔥</div>
+                    <div class="membership-note">➕ الآيدي الخاص بك في واتسأب 🆔💬</div>
+                    <div class="membership-note">يرجى إرسال سكرين للتحويل ➕</div>
+                    <a href="https://wa.me/+218928574522?text=نبي عضوية شهرية - 125 د.ل" class="buy-btn" target="_blank">شراء الآن</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            𝑪𝑱亗𝑺𝑯𝑶𝑷 © 2026 - تواصل: +218928574522
+        </div>
+    </div>
+
+    <script>
+        function startShop() {
+            document.getElementById('landing').classList.add('hidden');
+            document.getElementById('mainContent').classList.add('show');
+        }
+    </script>
+</body>
+</html>
