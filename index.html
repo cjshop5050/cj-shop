@@ -321,5 +321,33 @@ body::before {
             document.getElementById('mainContent').classList.add('show');
         }
     </script>
+<!-- مشغل الموسيقى -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- زر تشغيل/ايقاف الموسيقى -->
+<button onclick="toggleMusic()" id="musicBtn" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; background: #ff0000; color: white; border: none; padding: 15px; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+    🔇
+</button>
+
+<script>
+let music = document.getElementById('bgMusic');
+let btn = document.getElementById('musicBtn');
+let isPlaying = false;
+
+function toggleMusic() {
+    if (isPlaying) {
+        music.pause();
+        btn.innerHTML = '🔇';
+        isPlaying = false;
+    } else {
+        music.play();
+        btn.innerHTML = '🔊';
+        isPlaying = true;
+    }
+}
+</script>    
 </body>
 </html>
