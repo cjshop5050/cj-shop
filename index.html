@@ -384,19 +384,17 @@ function toggleMusic() {
 </script>
 <script>
 function orderWhatsApp(productName, price) {
-    let phone = "218928574522"; // غير هذا لرقمك
-
+    let phone = "218928574522";
     let userID = prompt("اكتب الايدي متاعك:");
-
     if (!userID) {
         alert("لازم تكتب الايدي ❌");
         return;
     }
-
-    let message = السلام عليكم نبي: ${productName} بسعر ${price} دينار\nالايدي: ${userID};
-    let url = https://wa.me/${phone}?text=${encodeURIComponent(message)};
-    window.open(url, '_blank');
+    let message = "مرحبا أبغى: " + productName + " بسعر " + price + " دينار\nالايدي: " + userID;
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
 }
-</script>    
+</script>
+</body>    
 </body>
 </html>
